@@ -50,3 +50,6 @@ Once running, the proxy listens on port `11434`. You can make requests to `http:
 3. **Build**:
 
        go build -o ollama-proxy
+
+## CI
+The [CI workflow](.github/workflows/ci.yml) runs on every pull request and on pushes to `main`. It uses the Go toolchain pinned by `go.mod` and checks that the source is `gofmt`-clean, that `go vet ./...` passes, that `go test ./...` passes, and that `go build ./...` succeeds. It does not deploy or require any secrets.
